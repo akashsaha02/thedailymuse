@@ -28,7 +28,7 @@ const page = () => {
 
   return (
     <div>
-      <div className="card bg-base-200 text-base-content w-96 mx-auto">
+      <div className="card bg-base-200 text-base-content w-96 mx-auto my-20">
         <div className="card-body">
           <h2 className="card-title">{post.title}</h2>
           <p>{post.body}</p>
