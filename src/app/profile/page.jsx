@@ -1,8 +1,14 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+
+
 const page = async () => {
 
   const { getUser } = getKindeServerSession();
   const user = await getUser();
+
+
+
+ 
   console.log(user);
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -13,6 +19,9 @@ const page = async () => {
 
         {user ? (
           <div className="space-y-4">
+            <div className="flex justify-center items-center">
+              <img src={user.picture} className="rounded-full" alt="Profile Picture" />
+            </div>
             <div className="bg-gray-50 p-4 rounded-lg shadow-inner">
               <h2 className="text-lg font-medium text-gray-700">User ID:</h2>
               <p className="text-gray-600">{user.id}</p>
