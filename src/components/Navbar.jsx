@@ -15,9 +15,9 @@ const Navbar = async () => {
 
 
   const navItems = <>
-    <li><a>Item 1</a></li>
+    <li><Link href="/">Home</Link></li>
+    <li><Link href="/profile">Profile</Link></li>
 
-    <li><a>Item 3</a></li>
 
   </>
   return (
@@ -45,7 +45,7 @@ const Navbar = async () => {
               {navItems}
             </ul>
           </div>
-          <Link href='/' className="text-xl">theDailyMuse</Link>
+          <Link href='/' className="text-xl font-bold">TheDailyMuse</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -65,10 +65,8 @@ const Navbar = async () => {
                 <p className="btn btn-secondary">Sign Up</p>
               </RegisterLink>
             </> : <>
-
-              <Link href='/profile' className="btn btn-primary">Profile</Link>
               <LogoutLink>
-                <p className="btn btn-primary">Logout</p>
+                <p className="btn btn-error">Logout</p>
               </LogoutLink>
             </>
           }
