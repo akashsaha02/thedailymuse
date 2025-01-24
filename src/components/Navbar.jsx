@@ -1,21 +1,16 @@
 
-import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Link from "next/link";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 
-const Navbar = () => {
+const Navbar = async () => {
 
   const { isAuthenticated } = getKindeServerSession();
 
-  const isAuthFn = async () => {
-    const isAuth = await isAuthenticated();
-    console.log(isAuth)
-    return isAuth;
-  }
+  const isAuth = await isAuthenticated();
 
-  isAuthFn();
 
 
 
@@ -60,7 +55,7 @@ const Navbar = () => {
         <div className="navbar-end gap-2">
 
           {
-            isAuthFn() ? <>
+            !isAuth ? <>
               <LoginLink>
 
                 <p className="btn btn-primary">Login</p>
@@ -71,13 +66,10 @@ const Navbar = () => {
               </RegisterLink>
             </> : <>
 
-              <LoginLink>
-
-                <p className="btn btn-primary">Profile</p>
-              </LoginLink>
-              
-
-
+              <Link href='/profile' className="btn btn-primary">Profile</Link>
+              <LogoutLink>
+                <p className="btn btn-primary">Logout</p>
+              </LogoutLink>
             </>
           }
         </div>

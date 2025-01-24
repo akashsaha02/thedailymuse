@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 const AllPosts = () => {
 
     const [post, setpost] = useState([]);
+
+    const router = useRouter();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,7 +28,12 @@ const AllPosts = () => {
                             <h2 className="card-title">{item.title}</h2>
                             <p>{item.body}</p>
                             <div className="card-actions justify-end">
-                                <button className="btn">View Details</button>
+                                <button
+
+                                onClick={() => router.push(`/blogs/${item.id}`)}
+
+
+                                    className="btn">View Details</button>
                             </div>
                         </div>
                     </div>
