@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 const AllPosts = () => {
 
     const [post, setpost] = useState([]);
-
     const router = useRouter();
 
     useEffect(() => {
@@ -29,15 +28,12 @@ const AllPosts = () => {
                             <p>{item.body}</p>
                             <div className="card-actions justify-end">
                                 <button
-
                                     onClick={() => router.push(`/blogs/${item.id}`)}
-
-
                                     className="btn">View Details</button>
                             </div>
                         </div>
                     </div>
-                )) : <h1>No Posts Found</h1>}
+                )) : <h1 className="text-center">Loading ....</h1>}
             </div>
 
         </div>

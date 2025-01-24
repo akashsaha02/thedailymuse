@@ -16,7 +16,13 @@ const Navbar = async () => {
 
   const navItems = <>
     <li><Link href="/">Home</Link></li>
-    <li><Link href="/profile">Profile</Link></li>
+    <li>
+      {isAuth ? (
+        <Link href='/profile'>Profile</Link>
+      ) : (
+        <LoginLink>Profile</LoginLink>
+      )}
+    </li>
 
 
   </>
