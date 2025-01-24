@@ -13,7 +13,7 @@ const Hero = () => {
                     <h1 className="text-5xl font-bold">Welcome to The Daily Muse!</h1>
                     <p className="py-6">
                         Dive into a world of stories, insights, and inspirations. Whether you're here for travel tales, tech trends, or mouth-watering recipes, we've got something for everyone. Stay curious and explore the extraordinary!
-                    </p>
+                    ji</p>
                     <button className="btn btn-primary">Start Exploring</button>
                 </div>
 
